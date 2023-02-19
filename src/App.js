@@ -31,11 +31,9 @@ const App = () => {
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<LogIn />} />
-          <Route path='/*' element={<PrivateRoute />}>
-            <Route path='search' element={<SearchResult />} />
-          </Route>
+          <Route path='/search' element={<PrivateRoute><SearchResult /></PrivateRoute>} />
           <Route path='/home' element={<Home />} />
-          <Route path='*' element={<Error404 />} />
+          <Route path='/*' element={<Error404 />} />
         </Routes>
       </Router>
     </userContext.Provider>

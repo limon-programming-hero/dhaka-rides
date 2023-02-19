@@ -1,17 +1,20 @@
 // import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { userContext } from './../../App';
+import SearchResult from '../SearchResult/SearchResult';
 
 
 const PrivateRoute = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     console.log(setLoggedInUser);
     if (loggedInUser?.email && loggedInUser?.ride) {
-        return <Outlet />
+        return <SearchResult />
     } else if (loggedInUser?.email && !loggedInUser?.ride) {
         return <Navigate to='/home' />
-    } else {
+    } else if (!loggedInUser?.email && loggedInUser?.ride) {
+        return <Navigate to='/login' />
+    } else if (!loggedInUser?.email && !loggedInUser?.ride) {
         return <Navigate to='/login' />
     }
 };
