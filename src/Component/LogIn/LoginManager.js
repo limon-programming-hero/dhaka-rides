@@ -6,7 +6,7 @@ const GoogleProvider = new GoogleAuthProvider();
 
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
 
 export const SignUpWithEmail = (email, password) => {
     let userInfo = {};
@@ -20,7 +20,7 @@ export const SignUpWithEmail = (email, password) => {
             return userInfo;
         })
         .catch((error) => {
-            var errorCode = error.code;
+            // var errorCode = error.code;
             const errorMessage = error.message;
             userInfo.submitFeedback = errorMessage;
             return userInfo;
@@ -38,7 +38,7 @@ export const SignInWithEmail = (email, password) => {
             return userInfo;
         })
         .catch((error) => {
-            const errorCode = error.code;
+            // const errorCode = error.code;
             const errorMessage = error.message;
             userInfo.submitFeedback = errorMessage;
             console.log(errorMessage);
@@ -52,7 +52,8 @@ export const GooglePopUpSignIn = () => {
         .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
+            console.log(credential);
+            // const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
             userInfo = { ...user }
@@ -62,12 +63,12 @@ export const GooglePopUpSignIn = () => {
             // ...
         }).catch((error) => {
             // Handle Errors here.
-            const errorCode = error.code;
+            // const errorCode = error.code;
             const errorMessage = error.message;
             // The email of the user's account used.
-            const email = error.customData.email;
+            // const email = error.customData.email;
             // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
+            // const credential = GoogleAuthProvider.credentialFromError(error);
             userInfo = { submitFeedback: errorMessage };
             return userInfo
             // ...

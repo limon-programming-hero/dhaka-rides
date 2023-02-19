@@ -6,6 +6,7 @@ import { userContext } from './../../App';
 
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    console.log(setLoggedInUser);
 
     return (
         <div className='header-full'>

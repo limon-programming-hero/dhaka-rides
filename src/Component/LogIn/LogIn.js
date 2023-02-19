@@ -25,7 +25,7 @@ const LogIn = () => {
             userInfo[e.target.name] = e.target.value;
         }
         if (e.target.name === 'email') {
-            const isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value);
+            const isEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value);
             if (isEmail) userInfo[e.target.name] = e.target.value;
             console.log(isEmail);
         }
@@ -78,7 +78,7 @@ const LogIn = () => {
     }
     useEffect(() => {
         loggedInUser.email && navigate('/home')
-    }, [loggedInUser.email])
+    }, [loggedInUser.email, navigate])
     return (
         <div className='d-flex justify-content-center'>
             <div>

@@ -6,6 +6,7 @@ import { userContext } from './../../App';
 
 const PrivateRoute = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    console.log(setLoggedInUser);
     if (loggedInUser?.email && loggedInUser?.ride) {
         return <Outlet />
     } else if (loggedInUser?.email && !loggedInUser?.ride) {

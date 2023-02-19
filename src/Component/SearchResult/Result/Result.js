@@ -9,6 +9,7 @@ import { userContext } from './../../../App';
 const Result = (props) => {
     const [location, setLocation] = props.locations;
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    console.log(setLoggedInUser)
     const rideDetails = FakeData.filter(data => data.name === loggedInUser.ride);
 
     console.log(props.locations);
@@ -30,6 +31,7 @@ const Result = (props) => {
             <span className='ms-5'>${data?.price}</span>
         </li>)
     })
+    
     return (
         <div>
             <div className='formStyle'>
