@@ -1,0 +1,48 @@
+.home-div {
+    height: 520px;
+    background-image: url('../../images/Bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card div {
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-weight: 700;
+}
+
+.card {
+    position: relative;
+    color: white;
+    margin: 20px;
+    width: 180px;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.card-1 {
+    background-image: url('../../images/bike.png');
+}
+
+.card-2 {
+    background-image: url('../../images/car.png');
+}
+
+.card-3 {
+    background-image: url('../../images/bus.png');
+}
+
+.card-4 {
+    background-image: url('../../images/metro-rail.png');
+}
+
+@media (max-width: 720px) {
+    .home-div {
+        height: 1200px;
+    }
+}

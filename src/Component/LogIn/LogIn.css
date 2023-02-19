@@ -1,0 +1,33 @@
+.loginForm {
+    border: 1px solid lightgray;
+    width: 400px;
+}
+
+.loginForm input {
+    height: 40px;
+    width: 350px;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    border-bottom: 1px solid lightgray;
+}
+
+.googleButton {
+    border-radius: 8px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    padding: 5px 25px;
+}
+
+.googleButton img {
+    height: 100%;
+}
+
+.orBorder {
+    height: 1px;
+    width: 400px;
+    /* background-color: rgb(140, 138, 138); */
+    border: 10px solid black;
+}
